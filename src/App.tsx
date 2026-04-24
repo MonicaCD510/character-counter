@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { TextInput } from './components/TextInput/TextInput';
-
+import { StatsDisplay } from './components/StatsDisplay/StatsDisplay';
 function App() {
   const [text, setText] = useState('');
 
@@ -18,9 +18,11 @@ function App() {
 
       <TextInput onTextChange={setText} />
 
-      <p>Characters: {characterCount}</p>
-      <p>Words: {wordCount}</p>
-      <p>Reading Time: {readingTime.toFixed(2)} minutes</p>
+      <StatsDisplay
+        characterCount={characterCount}
+        wordCount={wordCount}
+        readingTime={readingTime}
+      />
     </div>
   );
 }
